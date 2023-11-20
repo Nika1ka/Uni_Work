@@ -1,9 +1,9 @@
-var studentName = ["Богдан Пожар Михайлович", "Вінницький М.В.", "Кушнаренко Егор", "Лаптев", "Макс Гаман Олександрович", "Тікус І.Є.", ""];
-var group = ["ІТУ-21-3", "ІТУ-20-2", "", "", "", "ІТУ-21-2", ""];
-var variant = ["13", "2", "6", "8", "4", "", ""];
+var studentName = ["Богдан Пожар Михайлович", "Вінницький М.В.", "Кушнаренко Егор", "Лаптев", "Макс Гаман Олександрович", "Тікус І.Є.", "", ""];
+var group = ["ІТУ-21-3", "ІТУ-20-2", "", "", "", "ІТУ-21-2", "", ""];
+var variant = ["13", "2", "6", "8", "4", "", "", ""];
 
-var dl_mail = ["bohdan.pozhar@nure.ua", "", "", "", "", "", ""];
-var dl_pass = ["Gubk@bob2004", "", "", "", "", "", ""];
+var dl_mail = ["bohdan.pozhar@nure.ua", "", "", "", "", "", "", ""];
+var dl_pass = ["Gubk@bob2004", "", "", "", "", "", "", ""];
 
 var work_list = [
     ["Софт скилл", "IT управління бізнес процесами", "ТРКС"],
@@ -12,16 +12,18 @@ var work_list = [
     ["УІТІП"],
     ["Веб технології", "ОСТСП", "Python", "Теорія ймовірностей"],
     ["ТРКС"],
-    ["Cloud"]
+    ["Cloud"],
+    ["Менеджмент ІТ проектів"]
 ];
-var work_theme = [
+var additional_info = [
     ["", "", "Мобільний додаток \"Світ Кіно\""],
     ["", ""],
     ["", ""],
     [""],
-    ["", "", "", ""],
+    ["", "", "Всього 4 роботи", "Всього 7 робіт"],
     ["Мобільний додаток для перегляду спортивних подій \"Sport TV\""],
-    ["ІІ ОСНОВИ КОНТЕЙНЕРИЗАЦІЇ"]
+    ["ІІ ОСНОВИ КОНТЕЙНЕРИЗАЦІЇ"],
+    ["Робити ПЗ 2-3"]
 ];
 var ready_status = [
     [1, 1, 1],
@@ -30,6 +32,7 @@ var ready_status = [
     [1],
     [1, 1, 0, 0],
     [0],
+    [1],
     [0]
 ];
 var price = [
@@ -39,7 +42,8 @@ var price = [
     [1200],
     [1000, 1000, 1000, 1200],
     [1000],
-    [500]
+    [500],
+    [400]
 ];
 
 var work_metod_title_name = [
@@ -65,10 +69,10 @@ function createWorkList() {
 
         studentWorkList = addObj("studentWorkList", "", "Перелік ПЗ", newStudent);
         for(j = 0; j < work_list[i].length; j++) {
-            if(work_theme[i][j] == "")
+            if(additional_info[i][j] == "")
                 addObj("workName", "", work_list[i][j], studentWorkList, ready_status[i][j]);
             else
-                addObj("workName", "", work_list[i][j] + "<br>Тема: " + work_theme[i][j], studentWorkList, ready_status[i][j]);
+                addObj("workName", "", work_list[i][j] + "<br>Тема: " + additional_info[i][j], studentWorkList, ready_status[i][j]);
             addObj("pzPrice", "Вартість: ", price[i][j], studentWorkList, ready_status[i][j]);
 
             work_count = work_metod_title_name.indexOf(work_list[i][j]);

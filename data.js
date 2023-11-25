@@ -53,7 +53,7 @@ var work_metod_title = [
     ["МУ_ПЗ_ТРКС"], ["1", "2", "3", "4", "5", "6", "7", "8", "Аccемблер"], ["Для пз 1", "ПЗ1 Python", "Для пз 2", "ПЗ2 Python"], 
     ["ПЗ  1", "ПЗ  3", "ПЗ  5", "ПЗ  7"], ["ПР У ІТ  ІП Ч 1(1_2_3)", "ПР У ІТ ІП Ч2 (4_5_6)"], ["1 Soft skills", "2", "3"],
     ["ПЗ  1-2", "ПЗ  3-4", "ПЗ  5-6", "ПЗ  7-8"], ["ПЗ №1", "Практичне завдання № 2", "Практичне завдання № 3"], ["Перелік_завдань_Загальний_опис_2023_1", "Метод_WTTJS_ПЗ_2023"],
-    ["МВ_ПЗ_Технології_Cloud_Систем"], ["Таблиці ТЙЙПіМС", "Тема 1", "Тема_2", "Тема_3"]
+    ["МВ_ПЗ_Технології_Cloud_Систем"], ["Таблиці ТЙЙПіМС", "Тема 1", "Тема_2", "Тема_3", "Тема 4"]
 ];
 
 function createWorkList() {
@@ -72,7 +72,7 @@ function createWorkList() {
             if(additional_info[i][j] == "")
                 addObj("workName", "", work_list[i][j], studentWorkList, ready_status[i][j]);
             else
-                addObj("workName", "", work_list[i][j] + "<br>Тема: " + additional_info[i][j], studentWorkList, ready_status[i][j]);
+                addObj("workName", "", work_list[i][j] + "<br>" + additional_info[i][j], studentWorkList, ready_status[i][j]);
             addObj("pzPrice", "Вартість: ", price[i][j], studentWorkList, ready_status[i][j]);
 
             work_count = work_metod_title_name.indexOf(work_list[i][j]);
